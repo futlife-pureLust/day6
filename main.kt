@@ -5,9 +5,12 @@ fun main(args: Array<String>) {
         "Welcome to SimVillage, $playerName! (copyright $currentYear)"
     }
 }
-inline fun runSimulation(playerName: String, greetingFunction: (String, Int) -> String)
+inline fun runSimulation(playerName: String,
+                         costPrinter: (Int) -> Unit,
+                         greetingFunction: (String, Int) -> String)
 {
     val numBuildings = (1..3).shuffled().last() //Randomly selects 1, 2, or 3
+    costPrinter(numBuildings)
     println(greetingFunction(playerName, numBuildings))
 }
 fun printConstructionCost(numBuildings: Int){
