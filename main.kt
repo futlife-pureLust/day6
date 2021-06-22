@@ -1,5 +1,5 @@
 fun main(args: Array<String>) {
-    runSimulation("Guyal") { playerName, numBulidings ->
+    runSimulation("Guyal", ::printConstructionCost) { playerName, numBulidings ->
         val currentYear = 2018
         println("Adding $numBulidings houses")
         "Welcome to SimVillage, $playerName! (copyright $currentYear)"
