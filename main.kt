@@ -19,7 +19,7 @@ fun main(args: Array<String>) {
 }
 
 fun proficiencyCheck(swordsJuggling: Int?) {
-    swordsJuggling ?: throw UnskilledSwordJugglerException()
+    checkNotNull(swordsJuggling, { "Player cannot juggle swords" })
 }
 
 class UnskilledSwordJugglerException() :
